@@ -1,22 +1,82 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Audio Language Selector</title>
+<title>CABG Post Procedure Care</title>
 <style>
-body {font-family: Arial; text-align: center; margin-top: 40px; background:#f2f2f2;}
-button{padding:15px 30px; margin:10px; font-size:18px; border:none; border-radius:8px; cursor:pointer;}
-.eng{background:#4CAF50; color:white;}
-.hin{background:#2196F3; color:white;}
-.mar{background:#FF9800; color:white;}
+    body{
+        font-family:Arial, sans-serif;
+        background:#f7f9fb;
+        text-align:center;
+        margin:0;
+        padding:40px;
+        color:#2d2d2d;
+    }
+    .card{
+        background:white;
+        width:90%;
+        max-width:550px;
+        margin:auto;
+        padding:30px;
+        border-radius:12px;
+        box-shadow:0 0 12px rgba(0,0,0,0.1);
+    }
+    h1{
+        margin-bottom:10px;
+        color:#003d6b;
+    }
+    p{
+        font-size:16px;
+        line-height:1.6;
+    }
+    button{
+        width:90%;
+        max-width:350px;
+        padding:15px;
+        border:none;
+        border-radius:8px;
+        font-size:18px;
+        color:white;
+        margin-top:10px;
+        cursor:pointer;
+    }
+    .eng{background:#1e90ff;}
+    .hin{background:#28a745;}
+    .mar{background:#ff9800;}
+
+    .note{
+        margin-top:25px;
+        text-align:left;
+        padding:0 10px;
+    }
+    footer{
+        margin-top:35px;
+        font-size:13px;
+        color:#666;
+    }
 </style>
 </head>
-<body>
-<h2>Select Your Language</h2><br>
 
-<button class="eng" onclick="playAudio('english')">🔊 English</button><br>
-<button class="hin" onclick="playAudio('hindi')">🔊 Hindi</button><br>
-<button class="mar" onclick="playAudio('marathi')">🔊 Marathi</button><br><br>
+<body>
+
+<div class="card">
+    <h1>🫀 CABG Post-Procedure Care</h1>
+    <p>Select your preferred language to listen to the care instructions.</p>
+
+    <button class="eng" onclick="playAudio('english')">🔊 Play – English</button><br>
+    <button class="hin" onclick="playAudio('hindi')">🔊 Play – Hindi</button><br>
+    <button class="mar" onclick="playAudio('marathi')">🔊 Play – Marathi</button>
+
+    <div class="note">
+        <h3>What you will learn:</h3>
+        <ul>
+            <li>Daily care after surgery</li>
+            <li>Medication and timing</li>
+            <li>Wound & bandage care</li>
+            <li>When to contact doctor</li>
+            <li>Diet + physical activity instructions</li>
+        </ul>
+    </div>
+</div>
 
 <audio id="english" src="English Instructions .mp3"></audio>
 <audio id="hindi" src="Hindi Instructions .mp3"></audio>
@@ -24,12 +84,14 @@ button{padding:15px 30px; margin:10px; font-size:18px; border:none; border-radiu
 
 <script>
 function playAudio(lang){
- document.getElementById('english').pause();
- document.getElementById('hindi').pause();
- document.getElementById('marathi').pause();
- document.getElementById(lang).play();
+    document.getElementById('english').pause();
+    document.getElementById('hindi').pause();
+    document.getElementById('marathi').pause();
+    document.getElementById(lang).play();
 }
 </script>
+
+<footer>For emergencies, contact your healthcare provider immediately.</footer>
 
 </body>
 </html>
