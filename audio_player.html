@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Audio Language Selector</title>
+<style>
+body {font-family: Arial; text-align: center; margin-top: 40px; background:#f2f2f2;}
+button{padding:15px 30px; margin:10px; font-size:18px; border:none; border-radius:8px; cursor:pointer;}
+.eng{background:#4CAF50; color:white;}
+.hin{background:#2196F3; color:white;}
+.mar{background:#FF9800; color:white;}
+</style>
+</head>
+<body>
+<h2>Select Your Language</h2><br>
+
+<button class="eng" onclick="playAudio('english')">🔊 English</button><br>
+<button class="hin" onclick="playAudio('hindi')">🔊 Hindi</button><br>
+<button class="mar" onclick="playAudio('marathi')">🔊 Marathi</button><br><br>
+
+<audio id="english" src="English Instructions .mp3"></audio>
+<audio id="hindi" src="Hindi Instructions .mp3"></audio>
+<audio id="marathi" src="Marathi Instructions .mp3"></audio>
+
+<script>
+function playAudio(lang){
+ document.getElementById('english').pause();
+ document.getElementById('hindi').pause();
+ document.getElementById('marathi').pause();
+ document.getElementById(lang).play();
+}
+</script>
+
+</body>
+</html>
