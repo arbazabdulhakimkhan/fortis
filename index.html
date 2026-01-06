@@ -45,7 +45,6 @@ button{
 .eng{background:#1e90ff;}
 .hin{background:#28a745;}
 .mar{background:#ff9800;}
-
 .note{
     margin-top:25px;
     text-align:left;
@@ -55,6 +54,9 @@ footer{
     margin-top:35px;
     font-size:13px;
     color:#666;
+}
+button:active{
+    transform: scale(0.97);
 }
 </style>
 </head>
@@ -81,21 +83,33 @@ footer{
     </div>
 </div>
 
-<audio id="english" src="english-instructions.m4a" preload="none"></audio>
-<audio id="hindi" src="hindi-instructions.m4a" preload="none"></audio>
-<audio id="marathi" src="marathi-instructions.m4a" preload="none"></audio>
+<!-- AUDIO -->
+<audio id="english" preload="auto">
+  <source src="english-instructions.m4a" type="audio/mp4">
+</audio>
+
+<audio id="hindi" preload="auto">
+  <source src="hindi-instructions.m4a" type="audio/mp4">
+</audio>
+
+<audio id="marathi" preload="auto">
+  <source src="marathi-instructions.m4a" type="audio/mp4">
+</audio>
 
 <script>
 function playAudio(lang){
     const audios = ['english','hindi','marathi'];
 
     audios.forEach(id => {
-        const audio = document.getElementById(id);
-        audio.pause();
-        audio.currentTime = 0;
+        const a = document.getElementById(id);
+        a.pause();
+        a.currentTime = 0;
     });
 
-    document.getElementById(lang).play();
+    const audio = document.getElementById(lang);
+    audio.play().catch(() => {
+        alert("Tap again to allow audio");
+    });
 }
 </script>
 
